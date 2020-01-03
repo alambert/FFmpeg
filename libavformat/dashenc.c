@@ -727,10 +727,10 @@ static void write_time(AVIOContext *out, int64_t time)
     avio_printf(out, "%d.%dS", seconds, fractions / (AV_TIME_BASE / 10));
 }
 
-static void format_date_now(char *buf, int size)
+static void format_date_now(char *buf, int size, int64_t offset_us)
 {
     struct tm *ptm, tmbuf;
-    int64_t time_us = av_gettime();
+    int64_t time_us = av_gettime() + offset_us;
     int64_t time_ms = time_us / 1000;
     const time_t time_s = time_ms / 1000;
     int millisec = time_ms - (time_s * 1000);
@@ -992,7 +992,7 @@ static int write_manifest(AVFormatContext *s, int final)
         avio_printf(out, "\tsuggestedPresentationDelay=\"PT%"PRId64"S\"\n", c->last_duration / AV_TIME_BASE);
         if (c->availability_start_time[0])
             avio_printf(out, "\tavailabilityStartTime=\"%s\"\n", c->availability_start_time);
-        format_date_now(now_str, sizeof(now_str));
+        format_date_now(now_str, sizeof(now_str), 0);
         if (now_str[0])
             avio_printf(out, "\tpublishTime=\"%s\"\n", now_str);
         if (c->window_size && c->use_template) {
@@ -1729,7 +1729,7 @@ static int dash_write_packet(AVFormatContext *s, AVPacket *pkt)
         int64_t start_time_us = av_gettime();
         c->start_time_s = start_time_us / 1000000;
         format_date_now(c->availability_start_time,
-                        sizeof(c->availability_start_time));
+                        sizeof(c->availability_start_time), 1000000 * 30);
     }
 
     if (!os->availability_time_offset && pkt->duration) {
