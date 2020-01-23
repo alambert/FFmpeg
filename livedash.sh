@@ -39,7 +39,7 @@ httpd_pid=$!
   -i "testsrc2=size=1280x720:rate=30,format=yuv420p" \
   -f lavfi \
   -i "sine=frequency=1000:sample_rate=44100" \
-  -vf "drawtext=fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf:text='%{gmtime}Z %{n}':box=1:fontcolor=black:fontsize=24:x=(w-tw)/2:y=(h-th)/2" \
+  -vf "drawtext=fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf:text='%{gmtime}Z %{n}':box=1:fontcolor=black:fontsize=64:x=(w-tw)/2:y=(h-th)/2" \
   -c:v libx264 \
   -preset:v ultrafast \
   -profile:v high \
@@ -60,7 +60,6 @@ httpd_pid=$!
   -media_seg_name 'chunk-stream$RepresentationID$-$Number$.mp4' \
   manifest.mpd &
 
-# For Mac:
 #   -vf "drawtext=fontfile=/Library/Fonts/Roboto-Thin.ttf:text='%{gmtime}Z %{n}':box=1:fontcolor=black:fontsize=24:x=(w-tw)/2:y=(h-th)/2" \
 
 ffmpeg_pid=$!
