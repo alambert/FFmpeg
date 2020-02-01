@@ -55,11 +55,12 @@ httpd_pid=$!
   -window_size 150 \
   -extra_window_size 60 \
   -remove_at_exit 1 \
-  -use_timeline 0 \
+  -use_timeline 1 \
   -init_seg_name 'init-stream$RepresentationID$.mp4' \
   -media_seg_name 'chunk-stream$RepresentationID$-$Number$.mp4' \
   manifest.mpd &
 
+#  -use_timeline 0 \
 #   -vf "drawtext=fontfile=/Library/Fonts/Roboto-Thin.ttf:text='%{gmtime}Z %{n}':box=1:fontcolor=black:fontsize=24:x=(w-tw)/2:y=(h-th)/2" \
 
 ffmpeg_pid=$!
