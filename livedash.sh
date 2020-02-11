@@ -19,6 +19,7 @@ cd "${out}"
 # originally, we used:
 # python3 -m http.server --directory . 8080 &
 # but we need CORS, so follow https://stackoverflow.com/a/28632834:
+# sudo apt install npm
 # npm install http-server
 # make sure you use `-c-1` to disable caching, or you'll serve old manifests :-(
 ~/node_modules/http-server/bin/http-server . -p "${port}" --cors -c-1 &
@@ -55,7 +56,7 @@ esac
 #fontfile="/Library/Fonts/Roboto-Thin.ttf"
 fontfile="/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf"
 
-~/w/ffmpeg/ffmpeg \
+~/ffmpeg/ffmpeg \
   -hide_banner \
   -re \
   -f lavfi \
