@@ -27,12 +27,12 @@ httpd_pid=$!
 
 # On Mac:
 # https://trac.ffmpeg.org/wiki/CompilationGuide/macOS#CompilingFFmpegyourself
-# git clone https://github.com/alambert/ffmpeg
+# git clone https://github.com/alambert/FFmpeg
 # ./configure --enable-gpl --enable-libx264 --enable-filter=drawtext  --enable-libfreetype
 # make
 
 # On Ubuntu:
-# git clone https://github.com/alambert/ffmpeg
+# git clone https://github.com/alambert/FFmpeg
 # sudo apt install gcc yasm libfreetype6-dev pkg-config libx264-dev ttf-dejavu
 # ./configure --enable-gpl --enable-libx264 --enable-filter=drawtext  --enable-libfreetype
 
