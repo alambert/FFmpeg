@@ -2,8 +2,10 @@
 
 set -e
 
-scenario=standard
-port=8080
+scenario=$1
+shift
+port=$1
+shift
 
 out=`mktemp -d`
 
