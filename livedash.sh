@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -e
-set -x
 
 scenario=standard
 port=8080
@@ -79,7 +78,7 @@ fontfile="/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf"
   -window_size 150 \
   -extra_window_size 60 \
   -remove_at_exit 1 \
-  ${scenario_args}
+  ${scenario_args} \
   manifest.mpd &
 
 ffmpeg_pid=$!
