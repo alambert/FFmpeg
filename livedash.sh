@@ -38,13 +38,13 @@ httpd_pid=$!
 
 case "${scenario}" in
 standard)
-  scenario_args='-use_timeline 0 -init_seg_name "init-stream$RepresentationID$.mp4" -media_seg_name "chunk-stream$RepresentationID$-$Number$.mp4"'
+  scenario_args='-use_timeline 0 -init_seg_name init-stream$RepresentationID$.mp4 -media_seg_name chunk-stream$RepresentationID$-$Number$.mp4'
   ;;
 timeline-crash)
-  scenario_args='-use_timeline 1 -init_seg_name "init-stream$RepresentationID$.mp4" -media_seg_name "chunk-stream$RepresentationID$-$Number$.mp4"'
+  scenario_args='-use_timeline 1 -init_seg_name init-stream$RepresentationID$.mp4 -media_seg_name chunk-stream$RepresentationID$-$Number$.mp4'
   ;;
 relative-path)
-  scenario_args='-use_timeline 0 -init_seg_name "foobar/../init-stream$RepresentationID$.mp4" -media_seg_name "foobar/../chunk-stream$RepresentationID$-$Number$.mp4"'
+  scenario_args='-use_timeline 0 -init_seg_name foobar/../init-stream$RepresentationID$.mp4 -media_seg_name foobar/../chunk-stream$RepresentationID$-$Number$.mp4'
   ;;
 *)
   echo "${0}: unknown scenario ${scenario}"
