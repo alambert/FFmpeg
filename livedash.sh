@@ -49,6 +49,11 @@ relative-path)
   mkdir foobar
   scenario_args='-use_timeline 0 -init_seg_name foobar/../init-stream$RepresentationID$.mp4 -media_seg_name foobar/../chunk-stream$RepresentationID$-$Number$.mp4'
   ;;
+relative-path-2)
+  mkdir foobar
+  cd foobar
+  scenario_args='-use_timeline 0 -init_seg_name ../init-stream$RepresentationID$.mp4 -media_seg_name ../chunk-stream$RepresentationID$-$Number$.mp4'
+  ;;
 *)
   echo "${0}: unknown scenario ${scenario}"
   exit 1
