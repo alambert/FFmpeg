@@ -2,6 +2,9 @@
 
 set -e
 
+SCRIPT=`realpath $0`
+SCRIPTPATH=`dirname $SCRIPT`
+
 scenario=$1
 shift
 port=$1
@@ -63,7 +66,7 @@ esac
 #fontfile="/Library/Fonts/Roboto-Thin.ttf"
 fontfile="/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf"
 
-./ffmpeg \
+"${SCRIPTPATH}/ffmpeg" \
   -hide_banner \
   -re \
   -f lavfi \
