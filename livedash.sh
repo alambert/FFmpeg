@@ -63,7 +63,7 @@ esac
 #fontfile="/Library/Fonts/Roboto-Thin.ttf"
 fontfile="/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf"
 
-~/ffmpeg/ffmpeg \
+./ffmpeg \
   -hide_banner \
   -re \
   -f lavfi \

@@ -609,7 +609,7 @@ static void output_segment_list(OutputStream *os, AVIOContext *out, AVFormatCont
     int i, start_index, start_number;
     get_start_index_number(os, c, &start_index, &start_number);
     // "&amp;".join(map(lambda x: "k%d=v%d" % (x, x), range(0, 100)))
-#define PUT_GARBAGE_IN_MY_QUERY_STRING
+//#define PUT_GARBAGE_IN_MY_QUERY_STRING
 #ifdef PUT_GARBAGE_IN_MY_QUERY_STRING
     char const garbage[] = "?k0=v0&amp;k1=v1&amp;k2=v2&amp;k3=v3&amp;k4=v4&amp;k5=v5&amp;k6=v6&amp;k7=v7&amp;k8=v8&amp;k9=v9&amp;k10=v10&amp;k11=v11&amp;k12=v12&amp;k13=v13&amp;k14=v14&amp;k15=v15&amp;k16=v16&amp;k17=v17&amp;k18=v18&amp;k19=v19&amp;k20=v20&amp;k21=v21&amp;k22=v22&amp;k23=v23&amp;k24=v24&amp;k25=v25&amp;k26=v26&amp;k27=v27&amp;k28=v28&amp;k29=v29&amp;k30=v30&amp;k31=v31&amp;k32=v32&amp;k33=v33&amp;k34=v34&amp;k35=v35&amp;k36=v36&amp;k37=v37&amp;k38=v38&amp;k39=v39&amp;k40=v40&amp;k41=v41&amp;k42=v42&amp;k43=v43&amp;k44=v44&amp;k45=v45&amp;k46=v46&amp;k47=v47&amp;k48=v48&amp;k49=v49&amp;k50=v50&amp;k51=v51&amp;k52=v52&amp;k53=v53&amp;k54=v54&amp;k55=v55&amp;k56=v56&amp;k57=v57&amp;k58=v58&amp;k59=v59&amp;k60=v60&amp;k61=v61&amp;k62=v62&amp;k63=v63&amp;k64=v64&amp;k65=v65&amp;k66=v66&amp;k67=v67&amp;k68=v68&amp;k69=v69&amp;k70=v70&amp;k71=v71&amp;k72=v72&amp;k73=v73&amp;k74=v74&amp;k75=v75&amp;k76=v76&amp;k77=v77&amp;k78=v78&amp;k79=v79&amp;k80=v80&amp;k81=v81&amp;k82=v82&amp;k83=v83&amp;k84=v84&amp;k85=v85&amp;k86=v86&amp;k87=v87&amp;k88=v88&amp;k89=v89&amp;k90=v90&amp;k91=v91&amp;k92=v92&amp;k93=v93&amp;k94=v94&amp;k95=v95&amp;k96=v96&amp;k97=v97&amp;k98=v98&amp;k99=v99";
 #else
